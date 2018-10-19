@@ -1,0 +1,14 @@
+.emacs-custom.el
+ido.last
+
+elpa/
+auto-save-list/
+games/
+emacs-backup/
+emojis/
+meghanada/
+
+*.html
+flymd*
+*.dat
+.emacs-custom*
