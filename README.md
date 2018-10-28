@@ -27,10 +27,10 @@ El color de fondo es #101010 y el del cursor es #cd1076.
 Los paquetes instalados son los de la configuración de [Alfedi] con la adición de:
 
 - [multiple-cursors]
--- C-S-c C-S-c - *mc/edit-lines* - Crea un cursor en todas las líneas seleccionadas.
--- C-> - *mc/mark-next-like-this* - Crea un cursor en la siguiente coincidencia con la selección actual.
--- C-< - *mc/mark-previous-like-this* - Crea un cursor en la anterior coincidencia con la selección actual.
--- C-c C-< - *mc/mark-all-like-this* - Crea un cursor en todas las coincidencias con la selección actual.
+  - C-S-c C-S-c - *mc/edit-lines* - Crea un cursor en todas las líneas seleccionadas.
+  - C-> - *mc/mark-next-like-this* - Crea un cursor en la siguiente coincidencia con la selección actual.
+  - C-< - *mc/mark-previous-like-this* - Crea un cursor en la anterior coincidencia con la selección actual.
+  - C-c C-< - *mc/mark-all-like-this* - Crea un cursor en todas las coincidencias con la selección actual.
 
 ## Atajos de teclado
 
