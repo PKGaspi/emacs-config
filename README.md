@@ -1,30 +1,28 @@
 # Mi configuración de emacs
 ## Introducción
 
-Configuración de Emacs basada en la de [Alfedi] personalizada para mi uso propio.
-La configuración todavía no es final y la iré actualizando con el tiempo.
+Configuración de Emacs basada en la de [Alfedi] personalizada para mi uso propio. La configuración todavía no es final y la iré actualizando con el tiempo.
 
 ## Instalación
 
-Para **Linux**, usando git:
+Para **Linux**, usando git:  
 **Atención, esto borrará tu configuración init de Emacs actual. Respalde su configuración si desea conservarla.**
 ~~~
 git clone https://github.com/rapsaGnauJ/emacs-config ~/.emacs.d/
 ~~~
 
-Para **otros sistemas operativos**:
+Para **otros sistemas operativos**:  
 Descargar el archivo init.el y reemplazar el actual de su configuración de Emacs. Respalde su configuración si desea conservarla. Para saber dónde se encuentra su configuración, busque en Google.
 
 ## Apariencia
 
-El tena usado es [Cyberpunk theme] por [n3mo] con alguna ligera modificación.
-El color de fondo es #101010 y el del cursor es #cd1076.
+El tena usado es [Cyberpunk theme] por [n3mo] con alguna ligera modificación.  
+El color de fondo es #101010 y el del cursor es #cd1076.  
 **Nota.-** El color del cursor a veces se cambia a blanco. Hay que arreglar eso.
-
 
 ## Paquetes instalados
 
-Los paquetes instalados son los de la configuración de [Alfedi] con la adición de:
+Los paquetes instalados son los de la configuración de [Alfedi] con la adición de:  
 
 - [multiple-cursors]
   - C-S-c C-S-c - *mc/edit-lines* - Crea un cursor en todas las líneas seleccionadas.
@@ -34,7 +32,7 @@ Los paquetes instalados son los de la configuración de [Alfedi] con la adición
 
 ## Atajos de teclado
 
-Estos son los atajos de teclado que he ido añadiendo:
+Estos son los atajos de teclado que he ido añadiendo:  
 
 - C-z - *undo* - Deshacer.
 - C-x C-k - *kill-buffer* - Matar un buffer.
