@@ -1,5 +1,7 @@
 .emacs-custom.el
 ido.last
+#ido.last#
+init.el~
 
 elpa/
 auto-save-list/
