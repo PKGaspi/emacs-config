@@ -42,10 +42,15 @@
 (setq telephone-line-height 24
       telephone-line-evil-use-short-tag t)
 (telephone-line-mode t)
-;; Tema
+;; Tema y apariencia
 (use-package cyberpunk-theme
   :ensure t
   :init (load-theme 'cyberpunk t))
+;; Puntero.
+(setq-default cursor-type 'bar)
+(set-cursor-color "#cd1076")
+;; Fondo
+(set-background-color "#101010")
 ;; Unas cuantas utilidades para mejorar nuestra experiencia
 (use-package windmove
   :ensure t
@@ -89,15 +94,9 @@
 (use-package poker
   :ensure t )
 ;; Accesorios varios
-(use-package zone-rainbow
-  :ensure t
-  :bind ("C-z" . zone-rainbow))
-;; (use-package spotify
-;;   :ensure t
-;;   :bind(("C-S-s p" . spotify-playpause)
-;;   	("C-S-s n" . spotify-next)
-;;   	("C-S-s b" . spotify-previous)
-  	;; ("C-S-s c" . spotify-current)))
+;;(use-package zone-rainbow
+;;  :ensure t
+;;  :bind ("C-z" . zone-rainbow))
 (use-package golden-ratio
   :ensure t
   :config (golden-ratio-mode t))
@@ -111,9 +110,11 @@
   :ensure t)
 (use-package magit
   :ensure t)
+;; Terminal mejorada
 (use-package multi-term
   :ensure t
   :bind (("C-t" . multi-term-dedicated-toggle)))
+;; Muchos cursores
 (use-package multiple-cursors
   :ensure t
   :bind (("C-S-c C-S-c" . mc/edit-lines)
@@ -126,8 +127,15 @@
 ;;	   (setq TeX-parse-self t)))
 (put 'upcase-region 'disabled nil)
 
-;; Puntero en modo barrita.
-(setq-default cursor-type 'bar)
-
 ;; Algunos modos para algunas extensiones.
 (add-to-list 'auto-mode-alist '("\\.ens\\'" . asm-mode))
+
+;; Algunos bindings personlizados.
+(global-set-key (kbd "C-z") 'undo)
+(global-set-key (kbd "C-x C-k") 'kill-buffer)
+(global-set-key (kbd "C-x k") 'kill-buffer-and-window)
+(global-set-key (kbd "C-<backspace>") 'kill-whole-line)
+(global-set-key (kbd "C-a") 'mark-whole-buffer)
+(global-set-key (kbd "C-;") 'comment-line)
+(global-set-key (kbd "RET") 'indent-new-comment-line)
+
