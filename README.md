@@ -6,9 +6,11 @@ Configuración de Emacs basada en la de [Alfedi] personalizada para mi uso propi
 ## Instalación
 
 Para **Linux**, usando git:  
-**Atención, esto borrará tu configuración init de Emacs actual. Respalde su configuración si desea conservarla.**
+**¡Atención!  
+Esto borrará tu configuración init de Emacs actual. Respalde su configuración si desea conservarla.**
 ~~~
-git clone https://github.com/rapsaGnauJ/emacs-config ~/.emacs.d/
+rm -rf ~/.emacs.d
+git clone https://github.com/rapsaGnauJ/emacs-config ~/.emacs.d
 ~~~
 
 Para **otros sistemas operativos**:  
@@ -39,6 +41,7 @@ Estos son los atajos de teclado que he ido añadiendo:
 - Cx k - *kill-buffer-and-window* - Matar buffer actual y cerrar su ventana.
 - C-\<backspace\> - *kill-whole-line* - Borra la línea actual.
 - C-a - *mark-whole-buffer* - Selecciona todo el buffer actual.
+- C-S-e - *move-beggining-of-line* - Mover el cursor al principio de la línea actual.
 - C-; - *comment-line* - Comenta/Descomenta la línea actual.
 - RET - *indent-new-comment-line* - Cambia de línea y empieza con comentario si la anterior era un comentario.
 
