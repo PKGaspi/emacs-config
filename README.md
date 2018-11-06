@@ -43,7 +43,10 @@ Estos son los atajos de teclado que he ido añadiendo:
 - C-a - *mark-whole-buffer* - Selecciona todo el buffer actual.
 - C-S-e - *move-beggining-of-line* - Mover el cursor al principio de la línea actual.
 - C-; - *comment-line* - Comenta/Descomenta la línea actual.
-- RET - *indent-new-comment-line* - Cambia de línea y empieza con comentario si la anterior era un comentario.
+
+Bajo implementación:  
+
+- ??? - *indent-new-comment-line* - Cambia de línea y empieza con comentario si la anterior era un comentario.
 
 
 [Alfedi]: https://github.com/Alfedi
