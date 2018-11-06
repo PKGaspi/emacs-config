@@ -138,4 +138,4 @@
 (global-set-key (kbd "C-a") 'mark-whole-buffer)
 (global-set-key (kbd "C-S-e") 'move-beginning-of-line)
 (global-set-key (kbd "C-;") 'comment-line)
-(global-set-key (kbd "RET") 'indent-new-comment-line)
+;(global-set-key (kbd "RET") 'indent-new-comment-line)
