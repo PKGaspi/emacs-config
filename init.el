@@ -16,9 +16,9 @@
   (package-install 'use-package))
 (eval-when-compile (require 'use-package))
 ;; Es el momento de hacerlo bonito
-(add-to-list 'default-frame-alist '(font . "Hack"))
-(set-face-attribute 'default nil :family "Hack")
-(set-default-font "Hack 11")
+(add-to-list 'default-frame-alist '(font . "Comic Sans MS-14"))
+(set-face-attribute 'default nil :family "Comic Sans MS-14")
+(set-default-font "Comic Sans MS-14")
 
 ;;(set-face-attribute 'default nil :height 168)
 (tooltip-mode -1)
