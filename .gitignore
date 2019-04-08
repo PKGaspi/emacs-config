@@ -1,16 +1,7 @@
-.emacs-custom.el
-ido.last
-#ido.last#
-init.el~
+# Ignorar todo...
+*
 
-elpa/
-auto-save-list/
-games/
-emacs-backup/
-emojis/
-meghanada/
-
-*.html
-flymd*
-*.dat
-.emacs-custom*
+# Excepto estos archivos
+!.gitignore
+!README.md
+!init.el
