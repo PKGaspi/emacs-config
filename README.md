@@ -18,9 +18,8 @@ Descargar el archivo init.el y reemplazar el actual de su configuración de Emac
 
 ## Apariencia
 
-El tena usado es [Cyberpunk theme] por [n3mo] con alguna ligera modificación.  
-El color de fondo es #101010 y el del cursor es #cd1076.  
-**Nota.-** El color del cursor a veces se cambia a blanco. Hay que arreglar eso.
+El tena usado es [Nyx theme] por [guidoschmidt] con alguna ligera modificación.  
+El color de los comentarios se ha hecho más claro para que tengan más contraste con el fondo.  
 
 ## Paquetes instalados
 
@@ -50,6 +49,6 @@ Bajo implementación:
 
 
 [Alfedi]: https://github.com/Alfedi
-[Cyberpunk theme]: https://github.com/n3mo/cyberpunk-theme.el
-[n3mo]: https://github.com/n3mo/
+[Cyberpunk theme]: https://github.com/guidoschmidt/emacs-nyx-theme
+[guidoschmidt]: https://github.com/guidoschmidt
 [multiple-cursors]: https://github.com/magnars/multiple-cursors.el
