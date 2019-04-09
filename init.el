@@ -1,5 +1,6 @@
 ;; Toda la mierda va a ir aquí, maldita configuración custom :(
 (setq custom-file "~/.emacs.d/.emacs-custom.el")
+(setq inhibit-x-resources 't)
 ;; Comprobación de paquetes lo primero. Nos conectamos tanto a melpa como a melpa-stable
 (when (>= emacs-major-version 24)
   (require 'package)
@@ -105,14 +106,13 @@
       telephone-line-evil-use-short-tag t)
 (telephone-line-mode t)
 
+; --- Cursor. ---
+(setq-default cursor-type 'bar)
+
 ;----- Tema y apariencia. -----
 (use-package nyx-theme
   :ensure t
   :init (load-theme 'nyx t))
-
-; --- Cursor. ---
-(setq-default cursor-type 'bar)
-(require 'frame)
 
 ; --- Fondo. ---
 ;(set-background-color "#101010")
