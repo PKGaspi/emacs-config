@@ -81,6 +81,7 @@
 
 (provide 'fira-code-mode)
 
+
 ;;(set-face-attribute 'default nil :height 168)
 (tooltip-mode -1)
 (tool-bar-mode -1)
@@ -105,14 +106,16 @@
 (telephone-line-mode t)
 
 ;----- Tema y apariencia. -----
-(use-package cyberpunk-theme
+(use-package nyx-theme
   :ensure t
-  :init (load-theme 'cyberpunk t))
-; --- Puntero. ---
+  :init (load-theme 'nyx t))
+
+; --- Cursor. ---
 (setq-default cursor-type 'bar)
-(set-cursor-color "#cd1076")
+(require 'frame)
+
 ; --- Fondo. ---
-(set-background-color "#101010")
+;(set-background-color "#101010")
 
 
 ; Unas cuantas utilidades para mejorar nuestra experiencia
