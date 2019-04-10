@@ -5,3 +5,4 @@
 !.gitignore
 !README.md
 !init.el
+!fira-code-mode.el
