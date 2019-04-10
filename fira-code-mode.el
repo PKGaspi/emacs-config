@@ -1,4 +1,6 @@
-; Usar fira-code-mode para ligaduras.
+; Nota.- Este código es copiado y pegado de la wiki
+; de la fuente Fira Code para añadir las ligaduras
+; de la fuente a Emacs.
 (defun fira-code-mode--make-alist (list)
   "Generate prettify-symbols alist from LIST."
   (let ((idx -1))

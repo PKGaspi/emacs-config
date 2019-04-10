@@ -17,13 +17,6 @@
   (package-install 'use-package))
 (eval-when-compile (require 'use-package))
 
-; ----- Fuente. -----
-(add-to-list 'default-frame-alist '(font . "FiraCode-14"))
-(set-face-attribute 'default nil :family "FiraCode-14")
-(set-default-font "FiraCode-14")
-
-(load "~/.emacs.d/fira-code-mode.el")
-
 ;;(set-face-attribute 'default nil :height 168)
 (tooltip-mode -1)
 (tool-bar-mode -1)
@@ -47,10 +40,12 @@
       telephone-line-evil-use-short-tag t)
 (telephone-line-mode t)
 
+
+;; ----- Apariencia. -----
 ; --- Cursor. ---
 (setq-default cursor-type 'bar)
 
-;----- Tema y apariencia. -----
+;--- Tema. ---
 (use-package nyx-theme
   :ensure t
   :init (load-theme 'nyx t))
@@ -58,6 +53,13 @@
 ; --- Fondo. ---
 ;(set-background-color "#101010")
 
+; --- Fuente. ---
+(add-to-list 'default-frame-alist '(font . "FiraCode-14"))
+(set-face-attribute 'default nil :family "FiraCode-14")
+(set-default-font "FiraCode-14")
+
+; Usar fira-code-mode para ligaduras.
+(load "~/.emacs.d/fira-code-mode.el")
 
 ; Unas cuantas utilidades para mejorar nuestra experiencia
 (use-package windmove
@@ -128,10 +130,10 @@
          ("C->" . mc/mark-next-like-this)
 	 ("C-<" . mc/mark-previous-like-this)
 	 ("C-c C-<" . mc/mark-all-like-this)))
-;;(use-package auctex
-;;  :ensure t)
-;;  :config ((setq TeX-auto-save t)
-;;	   (setq TeX-parse-self t)))
+;(use-package auctex
+;  :ensure t
+;  :config ((setq TeX-auto-save t)
+;	   (setq TeX-parse-self t)))
 (put 'upcase-region 'disabled nil)
 
 ;; Algunos modos para algunas extensiones.
