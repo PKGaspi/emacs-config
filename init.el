@@ -95,8 +95,7 @@
 
 ;; Juegos :D
 (use-package tetris
-  :ensure t
-  :bind ("C-S-t" . tetris))
+  :ensure t )
 (use-package typing
   :ensure t )
 (use-package poker
