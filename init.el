@@ -1,7 +1,10 @@
-;; Toda la mierda va a ir aquí, maldita configuración custom :(
+; ----- Preparación. -----
+
+; Deshabilitar configuración custom.
 (setq custom-file "~/.emacs.d/.emacs-custom.el")
 (setq inhibit-x-resources 't)
-;; Comprobación de paquetes lo primero. Nos conectamos tanto a melpa como a melpa-stable
+
+; Conexión con melpa y melpa-stable.
 (when (>= emacs-major-version 24)
   (require 'package)
   (add-to-list
@@ -11,24 +14,31 @@
    'package-archives
    '("melpa" . "http://melpa.org/packages/"))
   (package-initialize))
-;; Ahora el use-package que agilizará la instalación de nuestros paquetes
+
+; Instalación de use-package.
 (unless (featurep 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
 (eval-when-compile (require 'use-package))
 
+; --- Ajustes iniciales. ---
+(setq inhibit-startup-screen t)               ; Desactivar pantalla de bienvenida.
+
+(tooltip-mode -1)                             ; Desactivar barra de herramientas.
+(tool-bar-mode -1)                            ; Desactivar barra de herramientas.
+(menu-bar-mode -1)                            ; Desactivar barra de menú de opciones.
+(scroll-bar-mode -1)                          ; Desactivar barra de desplazamiento.
+(toggle-frame-fullscreen)                     ; Activar pantalla completa.
+(set-window-fringes nil 0 0)                  ; Desactivar márgenes.
+
+(setq display-time-24hr-format 1)             ; Hora en formato 24 horas.
+(display-time-mode 1)                         ; Mostrar la hora. (formato caca :c).
+(display-battery-mode 1)                      ; Mostrar el porcentaje de la batería.
+
 ;;(set-face-attribute 'default nil :height 168)
-(tooltip-mode -1)
-(tool-bar-mode -1)
-(set-window-fringes nil 0 0)
-(menu-bar-mode -1)
-(scroll-bar-mode -1)
-;; (toggle-frame-fullscreen)
-(setq inhibit-startup-screen t)
-(display-time-mode 1)
 (setq ring-bell-function 'ignore)
 ;;(shell-command-to-string "echo -n $(date +%k:%M--%m-%d)")
-(display-battery-mode 1)
+
 (use-package rainbow-delimiters
   :ensure t
   :init
@@ -147,4 +157,5 @@
 (global-set-key (kbd "C-a") 'mark-whole-buffer)
 (global-set-key (kbd "C-S-e") 'move-beginning-of-line)
 (global-set-key (kbd "C-;") 'comment-line)
+(global-set-key (kbd "C-c C-f") 'set-frame-font)
 ;(global-set-key (kbd "RET") 'indent-new-comment-line)
