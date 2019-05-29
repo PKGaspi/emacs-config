@@ -32,7 +32,7 @@
 (set-window-fringes nil 0 0)                  ; Desactivar márgenes.
 
 (setq display-time-24hr-format 1)             ; Hora en formato 24 horas.
-(display-time-mode 1)                         ; Mostrar la hora. (formato caca :c).
+(display-time-mode 1)                         ; Mostrar la hora.
 (display-battery-mode 1)                      ; Mostrar el porcentaje de la batería.
 
 ;;(set-face-attribute 'default nil :height 168)
@@ -45,9 +45,9 @@
 (setq-default cursor-type 'bar)
 
 ;--- Tema. ---
-(use-package nyx-theme
+(use-package material-theme
   :ensure t
-  :init (load-theme 'nyx t))
+  :init (load-theme 'material t))
 
 ; --- Fondo. ---
 (set-background-color "#101010")
