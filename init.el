@@ -37,7 +37,9 @@
 
 ;;(set-face-attribute 'default nil :height 168)
 (setq ring-bell-function 'ignore)
-;;(shell-command-to-string "echo -n $(date +%k:%M--%m-%d)")
+(shell-command-to-string "echo -n $(date +%k:%M--%m-%d)")
+
+(set-input-method 'spanish-prefix)	; Distribución de teclado.
 
 ;; ----- Apariencia. -----
 
@@ -92,6 +94,9 @@
   :config (require 'helm-config)
   :bind (("C-x C-f" . helm-find-files)
 	 ("M-x" . helm-M-x)))
+
+(use-package lua-mode
+  :ensure t)
 
 (use-package ac-helm
   :ensure t)
