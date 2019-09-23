@@ -37,7 +37,7 @@
 
 ;;(set-face-attribute 'default nil :height 168)
 (setq ring-bell-function 'ignore)
-(shell-command-to-string "echo -n $(date +%k:%M--%m-%d)")
+;;(shell-command-to-string "echo -n $(date +%k:%M--%m-%d)")
 
 (set-input-method 'spanish-prefix)	; Distribución de teclado.
 
@@ -62,7 +62,7 @@
 
 ; ----- Paquetes. -----
 
-
+; Rainbow-delimiters: paréntesis de colorines.
 (use-package rainbow-delimiters
   :ensure t
   :init
@@ -75,6 +75,7 @@
       telephone-line-evil-use-short-tag t)
 (telephone-line-mode t)
 
+; Windmove: moverse por las ventanas con las flechas.
 (use-package windmove
   :ensure t
   :bind (("M-<up>" . windmove-up)
@@ -85,32 +86,33 @@
 (use-package ido
   :init (ido-mode))
 
-(use-package neotree
-  :ensure t
-  :bind (("C-x n" . neotree-toggle)))
-
+; Helm: mini-buffers expandidos.
+;; Thanks to @Ironjanowar for helm config.
 (use-package helm
-  :init (helm-mode 1)
-  :config (require 'helm-config)
-  :bind (("C-x C-f" . helm-find-files)
-	 ("M-x" . helm-M-x)))
+	     :ensure t
+	     :init (helm-mode 1)
+	     :config (require 'helm-config
+			      (setq helm-split-window-in-side-p t
+				    helm-buffers-fuzzy-matching t
+				    helm-recentf-fuzzy-match t
+				    helm-move-to-line-cycle-in-source t
+				    helm-M-x-fuzzy-match))
+	     :bind (("C-x C-f" . helm-find-files)
+		    ("M-x" . helm-M-x)
+		    ("C-x b" . helm-mini)
+		    ("C-x C-b" . helm-buffers-list)
+		    ("C-c g" . helm-google-suggest)))
 
-(use-package lua-mode
-  :ensure t)
-
+; Auto-complete helm.
 (use-package ac-helm
   :ensure t)
 
-;;(use-package auto-complete
-;;  :ensure t
-;;  :config (ac-config-default))
-
-;; Terminal mejorada
+; Multi-term: Terminal mejorada.
 (use-package multi-term
   :ensure t
   :bind (("C-t" . multi-term-dedicated-toggle)))
 
-;; Muchos cursores
+; Multiple-cursors: editar con varios cursores.
 (use-package multiple-cursors
   :ensure t
   :bind (("C-S-c C-S-c" . mc/edit-lines)
@@ -118,23 +120,48 @@
 	 ("C-<" . mc/mark-previous-like-this)
 	 ("C-c C-<" . mc/mark-all-like-this)))
 
-(use-package company
-  :ensure t
-  :init
-  :config (add-hook 'after-init-hook 'global-company-mode))
-
-;; Accesorios varios
-;;(use-package zone-rainbow
-;;  :ensure t
-;;  :bind ("C-z" . zone-rainbow))
+; Zone-rainbow: poner colorines a las letras.
+(use-package zone-rainbow
+  :ensure t)
 
 (use-package golden-ratio
   :ensure t
   :config (golden-ratio-mode t))
 
+(use-package all-the-icons
+	     :ensure t)
+
+; Neotree: explorador de archivos.
+(use-package neotree
+	     :ensure t
+	     :bind ("C-x n" . neotree-toggle))
+
+; Undo-tree: un árbol de operaciones de deshacer/rehacer.
+(use-package undo-tree
+	     :ensure t
+	     :config (global-undo-tree-mode t))
+
 (use-package rainbow-mode
   :ensure t
   :config (rainbow-mode t))
+
+;; Yasnippets: atajos para autocompletar.
+(use-package yasnippet
+	     :ensure t
+	     :init (yas-global-mode t)
+	     :bind ("C-<tab>" . yas-expand))
+(put 'downcase-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
+
+; Snippets de ejemplo.
+(use-package yasnippet-snippets
+  :ensure t)
+
+; Company: autocompletado.
+(use-package company
+	     :ensure t
+	     :init (global-company-mode)
+	     :bind ("C-<tab>" . company-yasnippet))
 
 ;; --- Lenguajes. ---
 
@@ -147,10 +174,11 @@
 (use-package magit
   :ensure t)
 
-;(use-package auctex
-;  :ensure t
-;  :config ((setq TeX-auto-save t)
-;	   (setq TeX-parse-self t)))
+(use-package elixir-mode
+  :ensure t)
+
+(use-package lua-mode
+  :ensure t)
 
 ;; Varios Básicos
 (electric-pair-mode 1)
