@@ -20,11 +20,10 @@ Para saber dónde se encuentra su configuración, busque en Google.
 
 ## Apariencia
 
-El tena usado es [Nyx theme] por [guidoschmidt] con alguna ligera modificación.
-El color de los comentarios se ha hecho más claro para que tengan más contraste con el fondo.  
+El tema utilizado es [Dracula theme].
 
 La fuente empleada es [Fira code] por [tonsky]. Esta debe ser instalada manualmente.  
-Para activar las ligaduras, active el modo `fira-code-mode`.
+Para activar las ligaduras use el modo `fira-code-mode`.
 
 ## Paquetes instalados
 
@@ -47,15 +46,12 @@ Estos son los atajos de teclado que he ido añadiendo:
 - C-a - `mark-whole-buffer` - Selecciona todo el buffer actual.
 - C-S-e - `move-beggining-of-line` - Mover el cursor al principio de la línea actual.
 - C-; - `comment-line` - Comenta/Descomenta la línea actual.
-
-Bajo implementación:  
-
-- ??? - `indent-new-comment-line` - Cambia de línea y empieza con comentario si la anterior era un comentario.
+- C-c C-f - `set-frame-font` - Cambiar la fuente del frame.
+- C-RET - `indent-new-comment-line` - Cambia de línea y empieza con comentario si la anterior era un comentario.
 
 
 [Alfedi]: https://github.com/Alfedi
-[Nyx theme]: https://github.com/guidoschmidt/emacs-nyx-theme
-[guidoschmidt]: https://github.com/guidoschmidt
+[Dracula theme]: https://draculatheme.com
 [Fira code]: https://github.com/tonsky/FiraCode
 [tonsky]: https://github.com/tonsky
 [multiple-cursors]: https://github.com/magnars/multiple-cursors.el
