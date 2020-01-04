@@ -68,6 +68,7 @@
   :init
   (add-hook 'prog-mode-hook 'rainbow-delimiters-mode 1))
 
+; Telephone-line: PowerLine en la barra inferior.
 (use-package telephone-line
   :ensure t) ;; Bueno, esto necesita un repaso gordo. Espero que mole mucho.
 (setq telephone-line-subseparator-faces '())
@@ -75,7 +76,7 @@
       telephone-line-evil-use-short-tag t)
 (telephone-line-mode t)
 
-; Windmove: moverse por las ventanas con las flechas.
+; Windmove: moverse por las ventanas alt + flechas.
 (use-package windmove
   :ensure t
   :bind (("M-<up>" . windmove-up)
@@ -83,34 +84,28 @@
 	 ("M-<right>" . windmove-right)
 	 ("M-<left>" . windmove-left)))
 
-(use-package ido
-  :init (ido-mode))
+;; (use-package ido
+;;   :init (ido-mode))
 
 ; Helm: mini-buffers expandidos.
 ;; Thanks to @Ironjanowar for helm config.
 (use-package helm
-	     :ensure t
-	     :init (helm-mode 1)
-	     :config (require 'helm-config
-			      (setq helm-split-window-in-side-p t
-				    helm-buffers-fuzzy-matching t
-				    helm-recentf-fuzzy-match t
-				    helm-move-to-line-cycle-in-source t
-				    helm-M-x-fuzzy-match))
-	     :bind (("C-x C-f" . helm-find-files)
-		    ("M-x" . helm-M-x)
-		    ("C-x b" . helm-mini)
-		    ("C-x C-b" . helm-buffers-list)
-		    ("C-c g" . helm-google-suggest)))
+  :ensure t
+  :init (helm-mode 1)
+  :bind (("C-x C-f" . helm-find-files)
+	 ("M-x" . helm-M-x)
+	 ("C-x b" . helm-mini)
+	 ("C-x C-b" . helm-buffers-list)
+	 ("C-c g" . helm-google-suggest)))
 
 ; Auto-complete helm.
 (use-package ac-helm
   :ensure t)
 
 ; Multi-term: Terminal mejorada.
-(use-package multi-term
-  :ensure t
-  :bind (("C-t" . multi-term-dedicated-toggle)))
+;; (use-package multi-term
+;;   :ensure t
+;;   :bind (("C-t" . multi-term-dedicated-toggle)))
 
 ; Multiple-cursors: editar con varios cursores.
 (use-package multiple-cursors
@@ -120,14 +115,20 @@
 	 ("C-<" . mc/mark-previous-like-this)
 	 ("C-c C-<" . mc/mark-all-like-this)))
 
+; Ace-mc: Añadir cursores fácilmente.
+(use-package ace-mc
+  :ensure t)
+
 ; Zone-rainbow: poner colorines a las letras.
 (use-package zone-rainbow
   :ensure t)
 
+; Golden-ratio: relación aúrea en las distintas ventanas.
 (use-package golden-ratio
   :ensure t
   :config (golden-ratio-mode t))
 
+; All-the-icons: Formato para varios iconos.
 (use-package all-the-icons
 	     :ensure t)
 
@@ -141,17 +142,14 @@
 	     :ensure t
 	     :config (global-undo-tree-mode t))
 
-(use-package rainbow-mode
-  :ensure t
-  :config (rainbow-mode t))
+;; (use-package rainbow-mode
+;;   :ensure t
+;;   :config (rainbow-mode t))
 
 ;; Yasnippets: atajos para autocompletar.
 (use-package yasnippet
 	     :ensure t
-	     :init (yas-global-mode t)
-	     :bind ("C-<tab>" . yas-expand))
-(put 'downcase-region 'disabled nil)
-(put 'upcase-region 'disabled nil)
+	     :init (yas-global-mode t))
 
 ; Snippets de ejemplo.
 (use-package yasnippet-snippets
@@ -162,6 +160,14 @@
 	     :ensure t
 	     :init (global-company-mode)
 	     :bind ("C-<tab>" . company-yasnippet))
+
+; Ac-ispell: Comprobador de ortografía (autocompletado).
+(use-package ac-ispell
+  :ensure t)
+
+; Helm-ispell: Comprobador de ortografía (helm).
+(use-package helm-ispell
+  :ensure t)
 
 ;; --- Lenguajes. ---
 
@@ -208,8 +214,5 @@
 (global-set-key (kbd "C-S-e") 'move-beginning-of-line)
 (global-set-key (kbd "C-;") 'comment-line)
 (global-set-key (kbd "C-c C-f") 'set-frame-font)
-;(global-set-key (kbd "RET") 'indent-new-comment-line)
-
-
-(put 'upcase-region 'disabled nil)
+(global-set-key (kbd "?\C-\r") 'indent-new-comment-line)
 
