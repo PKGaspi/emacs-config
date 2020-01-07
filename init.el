@@ -72,7 +72,8 @@
   :ensure t) ;; Bueno, esto necesita un repaso gordo. Espero que mole mucho.
 (setq telephone-line-subseparator-faces '())
 (setq telephone-line-height 24
-      telephone-line-evil-use-short-tag t)
+      telephone-line-primary-left-separator telephone-line-tan-left
+      telephone-line-primary-right-separator telephone-line-tan-right)
 (telephone-line-mode t)
 
 ;; Windmove: moverse por las ventanas alt + flechas.
@@ -213,5 +214,5 @@
 (global-set-key (kbd "C-S-e") 'move-beginning-of-line)
 (global-set-key (kbd "C-;") 'comment-line)
 (global-set-key (kbd "C-c C-f") 'set-frame-font)
-(global-set-key (kbd "?\C-\r") 'indent-new-comment-line)
+(global-set-key (kbd "C-RET") 'indent-new-comment-line)
 
