@@ -22,24 +22,25 @@
 (eval-when-compile (require 'use-package))
 
 ;; --- Ajustes iniciales. ---
-(setq inhibit-startup-screen t)               ; Desactivar pantalla de bienvenida.
+(setq inhibit-startup-screen t)               ;; Desactivar pantalla de bienvenida.
 
-(tooltip-mode -1)                             ; Desactivar barra de herramientas.
-(tool-bar-mode -1)                            ; Desactivar barra de herramientas.
-(menu-bar-mode -1)                            ; Desactivar barra de menú de opciones.
-(scroll-bar-mode -1)                          ; Desactivar barra de desplazamiento.
-(toggle-frame-fullscreen)                     ; Activar pantalla completa.
-(set-window-fringes nil 0 0)                  ; Desactivar márgenes.
+(tooltip-mode -1)                             ;; Desactivar barra de herramientas.
+(tool-bar-mode -1)                            ;; Desactivar barra de herramientas.
+(menu-bar-mode -1)                            ;; Desactivar barra de menú de opciones.
+(scroll-bar-mode -1)                          ;; Desactivar barra de desplazamiento.
+(toggle-frame-fullscreen)                     ;; Activar pantalla completa.
+(set-window-fringes nil 0 0)                  ;; Desactivar márgenes.
 
-(setq display-time-24hr-format 1)             ; Hora en formato 24 horas.
-(display-time-mode 1)                         ; Mostrar la hora.
-(display-battery-mode 1)                      ; Mostrar el porcentaje de la batería.
+(setq display-time-24hr-format 1)             ;; Hora en formato 24 horas.
+(display-time-mode 1)                         ;; Mostrar la hora.
+(display-battery-mode 1)                      ;; Mostrar el porcentaje de la batería.
+(global-linum-mode 1)                         ;; Mostrar número de línea.
 
 ;;(set-face-attribute 'default nil :height 168)
 (setq ring-bell-function 'ignore)
 ;;(shell-command-to-string "echo -n $(date +%k:%M--%m-%d)")
 
-(set-input-method 'spanish-prefix)	; Distribución de teclado.
+(set-input-method 'spanish-prefix)	      ;; Distribución de teclado.
 
 ;; ----- Apariencia. -----
 
@@ -68,13 +69,26 @@
   (add-hook 'prog-mode-hook 'rainbow-delimiters-mode 1))
 
 ;; Telephone-line: PowerLine en la barra inferior.
-(use-package telephone-line
-  :ensure t) ;; Bueno, esto necesita un repaso gordo. Espero que mole mucho.
-(setq telephone-line-subseparator-faces '())
-(setq telephone-line-height 24
-      telephone-line-primary-left-separator telephone-line-tan-left
-      telephone-line-primary-right-separator telephone-line-tan-right)
-(telephone-line-mode t)
+;; (use-package telephone-line
+;;   :ensure t
+;;   :config (setq telephone-line-subseparator-faces '()
+;; 		telephone-line-height 24
+;; 		telephone-line-primary-left-separator telephone-line-tan-left
+;; 		telephone-line-primary-right-separator telephone-line-tan-right)
+;;   :init (telephone-line-mode t))
+
+;; Moody: Pestañas en la barra inferior.
+(use-package moody
+  :ensure t
+  :config
+  (setq x-underline-at-descent-line t)
+  (moody-replace-mode-line-buffer-identification)
+  (moody-replace-vc-mode))
+
+;; Minions: Menú para la barra inferior.
+(use-package minions
+  :ensure t
+  :config (minions-mode 1))
 
 ;; Windmove: moverse por las ventanas alt + flechas.
 (use-package windmove
@@ -132,6 +146,10 @@
 (use-package all-the-icons
 	     :ensure t)
 
+;; Magit: git en emacs.
+(use-package magit
+  :ensure t)
+
 ;; Neotree: explorador de archivos.
 (use-package neotree
 	     :ensure t
@@ -175,9 +193,6 @@
   :ensure t)
 
 (use-package flymd
-  :ensure t)
-
-(use-package magit
   :ensure t)
 
 (use-package elixir-mode
