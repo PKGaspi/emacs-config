@@ -57,7 +57,7 @@
 ;; --- Fuente. ---
 (add-to-list 'default-frame-alist '(font . "FiraCode-12"))
 (set-face-attribute 'default nil :family "FiraCode-12")
-(set-default-font "FiraCode-12")
+(set-frame-font "FiraCode-12")
 (load "~/.emacs.d/fira-code-mode.el") ; Usar fira-code-mode para ligaduras.
 
 ;; ----- Paquetes. -----
@@ -198,8 +198,8 @@
 (use-package elixir-mode
   :ensure t)
 
-(use-package lua-mode
-  :ensure t)
+;(use-package lua-mode
+;  :ensure t)
 
 ;; Varios Básicos
 (electric-pair-mode 1)
