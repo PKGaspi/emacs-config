@@ -198,8 +198,11 @@
 (use-package elixir-mode
   :ensure t)
 
-;(use-package lua-mode
-;  :ensure t)
+(use-package gdscript-mode
+  :ensure t)
+
+(use-package lua-mode
+  :ensure t)
 
 ;; Varios Básicos
 (electric-pair-mode 1)
