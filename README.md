@@ -10,7 +10,7 @@ Para **Linux**, usando git:
 Esto borrará tu configuración init de Emacs actual. Respalde su configuración si desea conservarla.**
 ~~~
 rm -rf ~/.emacs.d
-git clone https://github.com/rapsaGnauJ/emacs-config ~/.emacs.d
+git clone https://github.com/c/emacs-config ~/.emacs.d
 ~~~
 
 Para **otros sistemas operativos**:  
