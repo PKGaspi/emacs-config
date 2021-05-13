@@ -133,6 +133,18 @@
 (use-package ace-mc
   :ensure t)
 
+;; impatient-mode: live preview de html y md.
+(use-package impatient-mode
+  :ens)
+
+;; allow impatient-mode to convert markdown.
+(defun markdown-html (buffer)
+  (princ (with-current-buffer buffer
+	   (format "<!DOCTYPE html><html><title>Impatient Markdown</title><xmp theme=\"united\" style=\"display:none;\"> %s  </xmp><script src=\"http://strapdownjs.com/v/0.2/strapdown.js\"></script></html>" (buffer-substring-no-properties (point-min) (point-max))))
+	 (current-buffer)))
+
+
+
 ;; Zone-rainbow: poner colorines a las letras.
 (use-package zone-rainbow
   :ensure t)
@@ -202,6 +214,9 @@
   :ensure t)
 
 (use-package lua-mode
+  :ensure t)
+
+(use-package cuda-mode
   :ensure t)
 
 ;; Varios Básicos
